@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block content %}
+    <h1 class="text-center">{{ article["title"] }}</h1>
+    <i>{{article["date"]}}</i>
+    <p>
+        {{ article["content"] }}
+    </p>
+    <i>{{article["author"]}}</i>
+    <br>
+    <a href="/edit/articles/{{ article['title'] }}">Edit</a>
+{% endblock %}

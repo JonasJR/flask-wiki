@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+  {% block content %}
+  {% if article %}
+  <h1 class="text-center">Edit</h1>
+  <form class="" action="/done" method="post">
+    <p>
+      Title: <input type="text" value="{{article['title']}}" name="title">
+    </p>
+    <p>
+      Content: <textarea name="content">{{article['content']}}</textarea>
+    </p>
+    <p>
+      Date: <input type="text" value="{{article['date']}}" name="date">
+    </p>
+    <p>
+      Name of Author: <input type="text" value="{{article['author']}}" name="author">
+    </p>
+    <p>
+      Comment: <input type="text" value="{{article['comment']}}" name="comment">
+    </p>
+    <p>
+      <input type="submit" value="Submit">
+    </p>
+  </form>
+  {% else %}
+    <h1 class="text-center">Create</h1>
+    <form class="" action="/done" method="post">
+      <p>
+        Title: <input type="text" value="" name="title">
+      </p>
+      <p>
+        Content: <textarea name="content"></textarea>
+      </p>
+      <p>
+        Date: <input type="text" value="" name="date">
+      </p>
+      <p>
+        Name of Author: <input type="text" value="" name="author">
+      </p>
+      <p>
+        Comment: <input type="text" value="" name="comment">
+      </p>
+      <p>
+        <input type="submit" value="Submit">
+      </p>
+    </form>
+  {% endif %}
+{%  endblock %}
